@@ -13,12 +13,13 @@ const app_service_1 = require("./app.service");
 const databases_module_1 = require("./tables/databases.module");
 const shared_module_1 = require("./shared/shared.module");
 const auth_module_1 = require("./auth/auth.module");
+const airtable_module_1 = require("./airtable/airtable.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [databases_module_1.DatabasesModule, shared_module_1.SharedModule, auth_module_1.AdminAuthModule],
+        imports: [databases_module_1.DatabasesModule, shared_module_1.SharedModule, auth_module_1.AdminAuthModule, airtable_module_1.AirtableModule],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
     })
