@@ -23,7 +23,6 @@ let AirtableController = class AirtableController {
         if (!baseID) {
             throw new Error('Base ID is required');
         }
-        console.log('lol');
         return this.airtableService.getTables(baseID);
     }
 };

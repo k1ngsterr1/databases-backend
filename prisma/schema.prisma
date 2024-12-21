@@ -26,5 +26,15 @@ model Database {
     name String
 }
 
+model Report {
+  id        String    @id @default(uuid()) // Уникальный идентификатор
+  tableName String    // Имя таблицы
+  filters   Json      // Сохраненные фильтры
+  results   Json      // Результаты отчета
+  createdAt DateTime  @default(now()) // Дата создания
+  author    String?   // Автор отчета (необязательное поле)
+}
+
+
 
 
