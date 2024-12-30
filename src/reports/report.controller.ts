@@ -18,9 +18,9 @@ export class ReportController {
   @Post()
   async createReport(@Body() createReportDto: CreateReportDto) {
     const prismaData = {
-      tableName: createReportDto.tableName,
+      tableNames: createReportDto.tableNames, // Pass as an array
       filters: JSON.stringify(createReportDto.filters), // Convert to JSON string
-      results: JSON.stringify(createReportDto.results), // Convert to JSON string
+      results: JSON.stringify(createReportDto.results), // Convert to JSON string (grouped by table if needed)
       author: createReportDto.author,
       createdAt: createReportDto.createdAt || new Date(),
     };

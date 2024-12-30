@@ -12,7 +12,7 @@ declare class ResultDto {
     filter: string;
 }
 export declare class CreateReportDto {
-    tableName: string;
+    tableNames: string[];
     filters: FilterDto[];
     results: ResultDto[];
     author?: string;

@@ -6,7 +6,7 @@ export declare class ReportService {
     createReport(data: Prisma.ReportCreateInput): Promise<{
         id: string;
         createdAt: Date;
-        tableName: string;
+        tableNames: string[];
         filters: Prisma.JsonValue;
         results: Prisma.JsonValue;
         author: string | null;
@@ -14,7 +14,7 @@ export declare class ReportService {
     getAllReports(): Promise<{
         id: string;
         createdAt: Date;
-        tableName: string;
+        tableNames: string[];
         filters: Prisma.JsonValue;
         results: Prisma.JsonValue;
         author: string | null;
@@ -22,7 +22,7 @@ export declare class ReportService {
     getReportById(id: string): Promise<{
         id: string;
         createdAt: Date;
-        tableName: string;
+        tableNames: string[];
         filters: Prisma.JsonValue;
         results: Prisma.JsonValue;
         author: string | null;
@@ -30,7 +30,7 @@ export declare class ReportService {
     updateReport(id: string, data: Prisma.ReportUpdateInput): Promise<{
         id: string;
         createdAt: Date;
-        tableName: string;
+        tableNames: string[];
         filters: Prisma.JsonValue;
         results: Prisma.JsonValue;
         author: string | null;
@@ -38,7 +38,7 @@ export declare class ReportService {
     deleteReport(id: string): Promise<{
         id: string;
         createdAt: Date;
-        tableName: string;
+        tableNames: string[];
         filters: Prisma.JsonValue;
         results: Prisma.JsonValue;
         author: string | null;

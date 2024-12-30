@@ -28,7 +28,7 @@ model Database {
 
 model Report {
   id        String    @id @default(uuid()) // Уникальный идентификатор
-  tableName String    // Имя таблицы
+  tableNames String[]    // Имя таблицы
   filters   Json      // Сохраненные фильтры
   results   Json      // Результаты отчета
   createdAt DateTime  @default(now()) // Дата создания

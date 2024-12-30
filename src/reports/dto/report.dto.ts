@@ -33,7 +33,7 @@ class ResultDto {
 
 export class CreateReportDto {
   @IsString()
-  tableName: string;
+  tableNames: string[];
 
   @IsArray()
   @ValidateNested({ each: true })

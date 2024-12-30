@@ -22,7 +22,7 @@ let ReportController = class ReportController {
     }
     async createReport(createReportDto) {
         const prismaData = {
-            tableName: createReportDto.tableName,
+            tableNames: createReportDto.tableNames,
             filters: JSON.stringify(createReportDto.filters),
             results: JSON.stringify(createReportDto.results),
             author: createReportDto.author,
