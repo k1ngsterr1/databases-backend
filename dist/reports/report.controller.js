@@ -22,6 +22,7 @@ let ReportController = class ReportController {
     }
     async createReport(createReportDto) {
         const prismaData = {
+            name: createReportDto.name,
             tableNames: createReportDto.tableNames,
             filters: JSON.stringify(createReportDto.filters),
             results: JSON.stringify(createReportDto.results),
@@ -41,6 +42,9 @@ let ReportController = class ReportController {
     }
     async deleteReport(id) {
         return this.reportService.deleteReport(id);
+    }
+    async deleteAllReports() {
+        return this.reportService.deleteAllReports();
     }
 };
 exports.ReportController = ReportController;
@@ -79,6 +83,12 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], ReportController.prototype, "deleteReport", null);
+__decorate([
+    (0, common_1.Delete)(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], ReportController.prototype, "deleteAllReports", null);
 exports.ReportController = ReportController = __decorate([
     (0, common_1.Controller)('reports'),
     __metadata("design:paramtypes", [report_service_1.ReportService])

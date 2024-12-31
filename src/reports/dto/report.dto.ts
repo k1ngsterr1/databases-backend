@@ -35,6 +35,9 @@ export class CreateReportDto {
   @IsString()
   tableNames: string[];
 
+  @IsString()
+  name: string;
+
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => FilterDto)

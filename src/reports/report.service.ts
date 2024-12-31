@@ -37,4 +37,9 @@ export class ReportService {
       where: { id },
     });
   }
+
+  // Удалить все отчеты
+  async deleteAllReports() {
+    return this.prisma.report.deleteMany(); // Deletes all records in the `report` table
+  }
 }

@@ -18,6 +18,7 @@ export class ReportController {
   @Post()
   async createReport(@Body() createReportDto: CreateReportDto) {
     const prismaData = {
+      name: createReportDto.name, // Add report name
       tableNames: createReportDto.tableNames, // Pass as an array
       filters: JSON.stringify(createReportDto.filters), // Convert to JSON string
       results: JSON.stringify(createReportDto.results), // Convert to JSON string (grouped by table if needed)
@@ -50,5 +51,11 @@ export class ReportController {
   @Delete(':id')
   async deleteReport(@Param('id') id: string) {
     return this.reportService.deleteReport(id);
+  }
+
+  // Удалить все отчеты
+  @Delete()
+  async deleteAllReports() {
+    return this.reportService.deleteAllReports();
   }
 }

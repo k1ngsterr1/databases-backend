@@ -17,6 +17,7 @@ let ReportService = class ReportService {
         this.prisma = prisma;
     }
     async createReport(data) {
+        console.log('data:', data);
         return this.prisma.report.create({ data });
     }
     async getAllReports() {
@@ -37,6 +38,9 @@ let ReportService = class ReportService {
         return this.prisma.report.delete({
             where: { id },
         });
+    }
+    async deleteAllReports() {
+        return this.prisma.report.deleteMany();
     }
 };
 exports.ReportService = ReportService;

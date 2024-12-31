@@ -28,6 +28,7 @@ model Database {
 
 model Report {
   id        String    @id @default(uuid()) // Уникальный идентификатор
+  name String
   tableNames String[]    // Имя таблицы
   filters   Json      // Сохраненные фильтры
   results   Json      // Результаты отчета

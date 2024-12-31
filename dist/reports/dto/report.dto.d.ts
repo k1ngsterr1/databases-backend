@@ -13,6 +13,7 @@ declare class ResultDto {
 }
 export declare class CreateReportDto {
     tableNames: string[];
+    name: string;
     filters: FilterDto[];
     results: ResultDto[];
     author?: string;

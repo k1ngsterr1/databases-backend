@@ -49,6 +49,10 @@ __decorate([
     __metadata("design:type", Array)
 ], CreateReportDto.prototype, "tableNames", void 0);
 __decorate([
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], CreateReportDto.prototype, "name", void 0);
+__decorate([
     (0, class_validator_1.IsArray)(),
     (0, class_validator_1.ValidateNested)({ each: true }),
     (0, class_transformer_1.Type)(() => FilterDto),
